@@ -175,9 +175,8 @@ func (V Video) SubClip(start, end float64) Video {
     return V.tempRender()
 }
 
-func Concat(videos []Video) (Video, error) {
+func Concat(videos []Video, tempFolder string) (Video, error) {
     var videoParts string
-    tempFolder := ""
 
     concatStorage, _ := ioutil.TempFile(tempFolder, "list-*.txt")
 
